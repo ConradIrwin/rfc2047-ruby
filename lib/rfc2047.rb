@@ -16,12 +16,15 @@ module Rfc2047
 
   WORD = /=\?([!#$\%&'*+-\/0-9A-Z\\^\`a-z{|}~]+)\?([BbQq])\?([!->@-~]+)\?=/ # :nodoc:
 
+  # Look for two adjacent words in the same encoding.
+  ADJACENT_WORDS = /(#{WORD})[\s\r\n]+(?==\?(\2)\?([BbQq])\?)/
+
   # Decodes a string, +from+, containing RFC 2047 encoded words into a target
   # character set, +target+ defaulting to utf-8. See iconv_open(3) for information on the
   # supported target encodings. If one of the encoded words cannot be
   # converted to the target encoding, it is left in its encoded form.
   def self.decode(from, target='utf-8')
-    from.gsub(WORD) do |word|
+    from.gsub(ADJACENT_WORDS, "\\1").gsub(WORD) do |word|
       cs = $1
       encoding = $2
       text = $3

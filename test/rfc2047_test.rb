@@ -62,6 +62,10 @@ class TestVcard < Test::Unit::TestCase
         'iso-8859-1' => 'If you can read this yo u understand the example.',
       },
 
+      "=?windows-1252?Q?Re=3A_Your_tweet=3A_rapportive_=97_=22=40rapportive_still_use_i?=\r\n =?windows-1252?Q?t_every_day=22?=" => {
+        'utf-8' => %(Re: Your tweet: rapportive \342\200\224 "@rapportive still use it every day")
+      },
+
       '=?ISO-8859-1?Q?Olle_J=E4rnefors?= <ojarnef / admin.kth.se>' => {'iso-8859-1' => "Olle J\xE4rnefors <ojarnef / admin.kth.se>",
       },
 
