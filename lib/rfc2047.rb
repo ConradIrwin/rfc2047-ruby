@@ -10,8 +10,6 @@
 #
 # This file is distributed under the same terms as Ruby.
 
-require 'iconv'
-
 module Rfc2047
 
   WORD = /=\?([!#$\%&'*+-\/0-9A-Z\\^\`a-z{|}~]+)\?([BbQq])\?([!->@-~]+)\?=/ # :nodoc:
@@ -45,7 +43,7 @@ module Rfc2047
       #
       # Remember: Iconv.open(to, from)
       begin
-        text = Iconv.open(target, cs) {|i| i.iconv(text)}
+        text = text.encode(target, cs)
       rescue 
         raise Unparseable, from
       end

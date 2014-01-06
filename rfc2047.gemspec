@@ -10,4 +10,6 @@ Gem::Specification.new do |s|
   s.license = "Ruby"
   s.files = ["lib/rfc2047.rb", "README.md"]
   s.require_path = "lib"
+
+  s.add_development_dependency "rake"
 end
