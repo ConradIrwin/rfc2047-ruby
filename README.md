@@ -1,4 +1,4 @@
-The rfc2047 ruby gem decodes email header fields that have been encoded according the the rules layed forth by [RFC 2047][1].
+The rfc2047 ruby gem decodes email header fields that have been encoded according the rules layed forth by [RFC 2047][1].
 
     Rfc2047.decode("=?ISO-8859-1?B?SWYgeW91IGNhbiByZWFkIHRoaXMgeW8=?= =?ISO-8859-2?B?dSB1bmRlcnN0YW5kIHRoZSBleGFtcGxlLg==?=")
     # => "If you can read this yo u understand the example."
