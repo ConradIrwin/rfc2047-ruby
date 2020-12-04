@@ -15,7 +15,7 @@ module Rfc2047
   WORD = /=\?([!#$\%&'*+-\/0-9A-Z\\^\`a-z{|}~]+)\?([BbQq])\?([!->@-~]+)\?=/ # :nodoc:
 
   # Look for two adjacent words in the same encoding.
-  ADJACENT_WORDS = /(#{WORD})[\s\r\n]+(?==\?(\2)\?([BbQq])\?)/
+  ADJACENT_WORDS = /(#{WORD})\s+(?==\?(\2)\?([BbQq])\?)/
 
   # Decodes a string, +from+, containing RFC 2047 encoded words into a target
   # character set, +target+ defaulting to utf-8. See iconv_open(3) for information on the
