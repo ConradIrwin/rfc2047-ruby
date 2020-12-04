@@ -44,8 +44,7 @@ class TestVcard < Test::Unit::TestCase
       '=?US-ASCII?Q?Keith_Moore?= <moore / cs.utk.edu>' => {
         'utf-8' => 'Keith Moore <moore / cs.utk.edu>',
         'ascii' => 'Keith Moore <moore / cs.utk.edu>',
-        'us-ascii' => 'Keith Moore <moore / cs.utk.edu>',
-        'ascii' => 'Keith Moore <moore / cs.utk.edu>',
+        'us-ascii' => 'Keith Moore <moore / cs.utk.edu>'
       },
 
       '=?ISO-8859-1?Q?Keld_J=F8rn_Simonsen?= <keld / dkuug.dk>' => {
